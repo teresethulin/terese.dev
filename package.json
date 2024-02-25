@@ -24,6 +24,6 @@
     "stylelint-order": "^6.0.4"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   }
 }
