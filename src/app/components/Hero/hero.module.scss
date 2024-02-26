@@ -1,0 +1,26 @@
+@use "../../../styles/base/colors" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/media-query" as *;
+
+.hero {
+    @include flex(column, center, center);
+    @include grid;
+    height: 100vh;
+    color: $primary;
+    background-color: $secondary;
+
+    .title {
+        @include h1;
+        @include grid-item(1, 4);
+
+        @media (min-width: $tablet) {
+            @include grid-item(2, 6);
+        }
+        
+        @media (min-width: $desktop) {
+            @include grid-item(2, 11);
+        }
+    }
+}
