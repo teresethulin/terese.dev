@@ -7,11 +7,20 @@
 
 .header {
     position: fixed;
+    z-index: 200;
     top: 0;
     @include flex(row, center, space-between);
     width: 100vw;
     height: fit-content;
     padding: $spacing-02 $spacing-03 0;
+
+    @media (min-width: $tablet) {
+        padding: $spacing-02 $spacing-04 0;
+    }
+    
+    @media (min-width: $desktop) {
+        padding: $spacing-04 $spacing-06 0;
+    }
 }
 
 .logo {
