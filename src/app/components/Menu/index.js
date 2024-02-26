@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import styles from "./navbar.module.scss";
+import styles from "./menu.module.scss";
 
-const Navbar = () => {
+const Menu = () => {
   return (
-    <nav className={styles.navbar}>
-      <ul className={styles.navList}>
+    <nav className={styles.menu}>
+      <ul className={styles.menuList}>
         <li>
           <Link href="/">
             Home
@@ -25,4 +25,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Menu;

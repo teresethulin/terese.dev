@@ -3,17 +3,13 @@
 @use "../../../styles/base/typography" as *;
 @use "../../../styles/base/variables" as *;
 
-.navbar {
+.menu {
     @include flex(row, center, space-between);
     padding: $spacing-02 0;
     color: $primary;
 }
 
-.navList {
+.menuList {
     list-style-type: none;
     padding: 0;
-}
-
-.navItem {
-    margin: 0 1rem;
 }
