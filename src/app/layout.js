@@ -1,5 +1,6 @@
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
 const workSans = Work_Sans({ subsets: ["latin"] });
 
@@ -11,7 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={workSans.className}>{children}</body>
+      <body className={workSans.className}>
+          <Header />
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
