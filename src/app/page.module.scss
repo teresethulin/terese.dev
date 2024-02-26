@@ -4,12 +4,6 @@
 
 .main {
   @include flex(column, center, flex-start, $spacing-05);
-  @include padding;
   min-height: 100vh;
   overflow-x: hidden;
-  padding-top: 10rem;
-
-  .h1 {
-    @include h1;
-  }
 }
