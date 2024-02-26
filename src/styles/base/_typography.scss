@@ -1,0 +1,12 @@
+@use "../base/media-query" as *;
+
+@mixin h1() {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: "Sporting Grotesque_Bold", sans-serif;
+
+    @media (min-width: $tablet) {
+        font-size: 45px;
+        line-height: 52px;
+    }
+}
