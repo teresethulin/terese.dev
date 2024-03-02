@@ -1,5 +1,6 @@
 @use "../../../styles/base/mixins" as *;
 @use "../../../styles/base/colors" as *;
+@use "../../../styles/base/media-query" as *;
 
 .menuButton {
     z-index: 10;
@@ -24,12 +25,6 @@
         border-radius: 48px;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
-    &:hover {
-        &::after {
-            transform: scale(1.25, 1.25);
-        }
-    }
 
     .burger {
         @include flex(column, center, space-between);
@@ -39,6 +34,29 @@
             width: 1rem;
             height: 2px;
             background-color: $secondary;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
+
+    &.open {
+       .burger {
+        .line:nth-of-type(1) {
+            transform: translateY(5px) rotate(-45deg);
+        }
+        .line:nth-of-type(2) {
+            opacity: 0;
+        }
+        .line:nth-of-type(3) {
+            transform: translateY(-5px) rotate(45deg);
+        }
+       }
+    }
+
+    @media (min-width: $desktop) {
+        &:hover {
+            &::after {
+                transform: scale(1.25, 1.25);
+            }
         }
     }
 }
