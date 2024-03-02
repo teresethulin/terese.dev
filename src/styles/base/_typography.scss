@@ -1,4 +1,7 @@
 @use "../base/media-query" as *;
+@use "../base/variables" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
 @mixin h1() {
     font-size: 2rem;
@@ -89,5 +92,19 @@
     @media (min-width: $desktop) {
         font-size: 1.125rem;
         line-height: 1.375rem;
+    }
+}
+
+@mixin menu-item() {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: -.02rem;
+    font-family: "Work Sans", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    
+    @media (min-width: $tablet) {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
     }
 }
