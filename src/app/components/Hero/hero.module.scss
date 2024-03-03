@@ -8,8 +8,8 @@
     @include flex(column, center, center);
     @include grid;
     height: 100vh;
-    color: $primary;
-    background-color: $secondary;
+    color: $black;
+    background-color: $neutral-10;
 
     .title {
         @include h1;

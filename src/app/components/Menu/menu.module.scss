@@ -2,17 +2,18 @@
 @use "../../../styles/base/mixins" as *;
 @use "../../../styles/base/typography" as *;
 @use "../../../styles/base/variables" as *;
+@use "../../../styles/base/colors" as *;
 
 .menu {
     position: fixed;
     top: 0;
     right: 0;
-    @include flex(row, center, center);
+    @include flex(row, flex-end, flex-start);
     width: 0;
     height: 100vh;
-    //padding-left: $spacing-06;
-    color: $primary;
-    background-color: $neutral;
+    padding: $spacing-02 $spacing-03;
+    color: $black;
+    background-color: $neutral-20;
     transform-origin: right;
     overflow-y: auto;
     transform: scaleX(0);
@@ -48,17 +49,26 @@
         }
     }
 
+    @media (min-width: $tablet) {
+        padding: $spacing-02 $spacing-04;
+    }
+
     @media (min-width: $desktop) {
-        padding: $spacing-09;
+        padding: $spacing-04 $spacing-06;
+
         &.open {
             width: 45vw;
 
             .menuList {
                 .menuItem {
-                    transition: color 0.1s ease-in;
+                    transition: color 0.04s ease-in;
                     
                     &:hover {
-                        color: $secondary;
+                        color: $neutral-60;
+                    }
+
+                    &:active {
+                        color: $neutral-80;
                     }
                 }
             }

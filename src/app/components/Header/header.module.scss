@@ -2,8 +2,8 @@
 @use "../../../styles/base/fonts" as *;
 @use "../../../styles/base/mixins" as *;
 @use "../../../styles/base/variables" as *;
-@use "../../../styles/base/colors" as *;
 @use "../../../styles/base/typography" as *;
+@use "../../../styles/base/colors" as *;
 
 .header {
     position: fixed;
@@ -25,4 +25,5 @@
 
 .logo {
     @include h3;
+    color: $black;
 }
