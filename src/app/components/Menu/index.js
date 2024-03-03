@@ -1,41 +1,27 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 
 import Link from 'next/link';
 import styles from "./menu.module.scss";
 
-const Menu = ({ isOpen, setIsOpen }) => {
-  const menuRef = useRef(null);
+const Menu = React.forwardRef(({ isOpen }, ref) => {
+  Menu.displayName = "Menu";
 
  useEffect(() => {
-   if (isOpen && menuRef.current) {
-      const menuItems = menuRef.current.querySelectorAll('[data-menu-item]');
+   if (isOpen && ref.current) {
+      const menuItems = ref.current.querySelectorAll('[data-menu-item]');
       menuItems.forEach((item, index) => {
         item.style.transitionDelay = `${0.075 * index}s`;
       });
     }
- }, [isOpen]);
-
- useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
- }, []);
+ }, [isOpen, ref]);
 
   const menuClasses = classNames(styles.menu, {
     [styles.open]: isOpen,
  });
 
   return (
-    <nav className={menuClasses} ref={menuRef}>
+    <nav className={menuClasses} ref={ref}>
       <ul className={styles.menuList}>
         <li className={styles.menuItem} data-menu-item>
           <Link href="/">
@@ -55,6 +41,6 @@ const Menu = ({ isOpen, setIsOpen }) => {
       </ul>
     </nav>
   );
-};
+});
 
 export default Menu;
