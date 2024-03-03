@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import styles from "./menu.module.scss";
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, setIsOpen }) => {
   const menuRef = useRef(null);
 
  useEffect(() => {
@@ -15,6 +15,20 @@ const Menu = ({ isOpen }) => {
       });
     }
  }, [isOpen]);
+
+ useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+ }, []);
 
   const menuClasses = classNames(styles.menu, {
     [styles.open]: isOpen,

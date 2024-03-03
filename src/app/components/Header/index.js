@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
         <h3 className={styles.logo}>terese</h3>
-        <Menu isOpen={isOpen}/>
+        <Menu isOpen={isOpen} setIsOpen={setIsOpen}/>
         <MenuButton onClick={toggleMenu} isOpen={isOpen}/>
     </header>
   );
