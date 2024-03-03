@@ -1,3 +1,69 @@
-$neutral: #FEFEFE;
-$primary: #0000FF;
-$secondary: #BBD8F6;
+$primary-10: #CCCCFF;
+$primary-20: #9999FF;
+$primary-30: #6666FF;
+$primary-40: #3333FF;
+$primary-50: #0000FF;
+$primary-60: #0A0AC2;
+$primary-70: #0F0F8A;
+$primary-80: #0F0F57;
+$primary-90: #0A0A29;
+
+$secondary-10: #CCECFF;
+$secondary-20: #99DAFF;
+$secondary-30: #66C7FF;
+$secondary-40: #33B5FF;
+$secondary-50: #00A2FF;
+$secondary-60: #0B8FDA;
+$secondary-70: #147CB8;
+$secondary-80: #1B6A98;
+$secondary-90: #1F597A;
+
+$tertiary-10: #FFC7EB;
+$tertiary-20: #FFADE2;
+$tertiary-30: #FF94D9;
+$tertiary-40: #FF7AD0;
+$tertiary-50: #FF62C7;
+$tertiary-60: #F538B1;
+$tertiary-70: #E11999;
+$tertiary-80: #A91E77;
+$tertiary-90: #761E56;
+
+$purple-10: #EDCCFF;
+$purple-20: #DB99FF;
+$purple-30: #CA66FF;
+$purple-40: #B833FF;
+$purple-50: #A600FF;
+$purple-60: #820AC2;
+$purple-70: #5F0F8A;
+$purple-80: #3E0F57;
+$purple-90: #1E0A29;
+
+$turquoise-10: #CEFDFD;
+$turquoise-20: #9FF8F9;
+$turquoise-30: #73F0F2;
+$turquoise-40: #49E6E8;
+$turquoise-50: #23D9DC;
+$turquoise-60: #26A4A6;
+$turquoise-70: #247475;
+$turquoise-80: #1D4849;
+$turquoise-90: #112222;
+
+$neutral-10: #F0F0F5;
+$neutral-20: #E1E1E9;
+$neutral-30: #D3D3DE;
+$neutral-40: #C6C6D2;
+$neutral-50: #BABAC7;
+$neutral-60: #9F9FAD;
+$neutral-70: #858593;
+$neutral-80: #6E6E77;
+$neutral-90: #57575B;
+
+$neutral: $neutral-10;
+$grey: $neutral-50;
+$black: $primary-90;
+
+$primary: $primary-50;
+$secondary: $secondary-50;
+$tertiary: $tertiary-50;
+$accent-purple: $purple-50;
+$accent-turquoise: $turquoise-50;
