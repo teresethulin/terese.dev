@@ -27,6 +27,7 @@
     display: grid;
     grid-gap: $spacing-03;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     width: 100vw;
     height: fit-content;
 
@@ -43,10 +44,11 @@
     @media (min-width: $desktop-l) {
         grid-gap: $spacing-02;
         grid-template-columns: repeat(12, $spacing-07);
+        justify-content: center;
     }
 }
 
-@mixin grid-item($column-start, $column-span, $row-start: null) {
+@mixin grid-item($column-start, $column-span: null, $row-start: null) {
     grid-column-start: $column-start;
     grid-column-end: span $column-span;
     grid-row-start: $row-start;
