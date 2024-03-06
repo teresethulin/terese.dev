@@ -1,19 +1,17 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
-import Page from "./Page";
-import Teaser from "./Teaser";
-import Feature from "./Feature";
-import Grid from "./Grid";
+import Page from "./Storyblok/Page";
+import Grid from "./Storyblok/Grid";
+import Hero from "./Hero";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
   components: {
-    teaser: Teaser,
     page: Page,
     grid: Grid,
-    feature: Feature
+    hero: Hero
   },
 });
  
