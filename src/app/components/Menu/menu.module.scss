@@ -10,6 +10,7 @@
     right: 0;
     @include flex(column, flex-start, center);
     width: 0;
+    height: 100vh;
     height: 100svh;
     padding: $spacing-02 $spacing-03;
     color: var(--text-color);
@@ -45,7 +46,7 @@
         padding: $spacing-04 $spacing-06;
 
         &.open {
-            width: 45vw;
+            width: 40vw;
         }
     }
 }
