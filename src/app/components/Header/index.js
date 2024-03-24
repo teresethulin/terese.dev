@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link.js";
 import Menu from "../Menu/index.js";
 import MenuButton from "../MenuButton/index.js";
 
@@ -12,7 +13,7 @@ const Header = ({ menuData }) => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
- };
+  };
 
  useEffect(() => {
     const handleClickOutside = (event) => {
@@ -33,11 +34,17 @@ const Header = ({ menuData }) => {
     };
  }, [menuRef, menuButtonRef]);
 
+ const colorStyle = {
+  "--text-color": `var(--${menuData?.main_color}-50)`
+ };
+
   return (
-    <header className={styles.header}>
-        <h3 className={styles.logo}>terese</h3>
-        <Menu ref={menuRef} isOpen={isOpen} menuData={menuData}/>
-        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen}/>
+    <header className={styles.header} style={colorStyle}>
+        <Link href="/">
+          <h3 className={styles.logo}>terese</h3>
+        </Link>
+        <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
+        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} color={menuData?.main_color}/>
     </header>
   );
 };

@@ -12,8 +12,8 @@
     width: 0;
     height: 100vh;
     padding: $spacing-02 $spacing-03;
-    color: $black;
-    background-color: $neutral-20;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     transform-origin: right;
     overflow-y: auto;
     transform: scaleX(0);

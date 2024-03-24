@@ -25,5 +25,5 @@
 
 .logo {
     @include h3;
-    color: $black;
+    color: var(--text-color);
 }
