@@ -5,7 +5,7 @@ import MenuButton from "../MenuButton/index.js";
 
 import styles from "./header.module.scss";
 
-const Header = () => {
+const Header = ({ menuData }) => {
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
         <h3 className={styles.logo}>terese</h3>
-        <Menu ref={menuRef} isOpen={isOpen}/>
+        <Menu ref={menuRef} isOpen={isOpen} menuData={menuData}/>
         <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen}/>
     </header>
   );

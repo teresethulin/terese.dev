@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import classNames from 'classnames';
 
-import Link from 'next/link';
 import styles from "./menu.module.scss";
 
-const Menu = React.forwardRef(({ isOpen }, ref) => {
+const Menu = React.forwardRef(({ isOpen, menuData }, ref) => {
   Menu.displayName = "Menu";
 
  useEffect(() => {
@@ -22,22 +22,10 @@ const Menu = React.forwardRef(({ isOpen }, ref) => {
 
   return (
     <nav className={menuClasses} ref={ref}>
-      <ul className={styles.menuList}>
-        <li className={styles.menuItem} data-menu-item>
-          <Link href="/">
-            Home
-          </Link>
-        </li>
-        <li className={styles.menuItem} data-menu-item>
-          <Link href="/about">
-            About
-          </Link>
-        </li>
-        <li className={styles.menuItem} data-menu-item>
-          <Link href="/contact">
-            Contact
-          </Link>
-        </li>
+      <ul className={styles.menuList} {...storyblokEditable({menuData})}>
+        {menuData?.menu_links?.map((nestedBlok) => (
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} />
+        ))}
       </ul>
     </nav>
   );
