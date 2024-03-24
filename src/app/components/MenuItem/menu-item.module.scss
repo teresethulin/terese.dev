@@ -1,0 +1,29 @@
+@use "../../../styles/base/" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/colors" as *;
+
+.menuItem {
+    @include menu-item;
+    opacity: 0;
+
+    &.open {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 1s;
+        transition-timing-function: ease-in;
+
+        @media (min-width: $desktop) {
+            transition: color 0.04s ease-in;
+        
+            &:hover {
+                color: $neutral-60;
+            }
+        
+            &:active {
+                color: $neutral-80;
+            }
+        }
+    }
+}
