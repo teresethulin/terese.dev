@@ -15,8 +15,6 @@
         transition-timing-function: ease-in;
 
         @media (min-width: $desktop) {
-            transition: color 0.04s ease-in;
-        
             &:hover {
                 color: $neutral-60;
             }

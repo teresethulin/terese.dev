@@ -28,13 +28,6 @@
 
         .menuList  {
             opacity: 1;
-
-            .menuItem {
-                opacity: 1;
-                transition-property: opacity;
-                transition-duration: 1s;
-                transition-timing-function: ease-in;
-            }
         }
     }
     
@@ -42,11 +35,6 @@
         list-style-type: none;
         padding: 0;
         opacity: 0;
-        
-        .menuItem {
-            @include menu-item;
-            opacity: 0;
-        }
     }
 
     @media (min-width: $tablet) {
@@ -58,20 +46,6 @@
 
         &.open {
             width: 45vw;
-
-            .menuList {
-                .menuItem {
-                    transition: color 0.04s ease-in;
-                    
-                    &:hover {
-                        color: $neutral-60;
-                    }
-
-                    &:active {
-                        color: $neutral-80;
-                    }
-                }
-            }
         }
     }
 }
