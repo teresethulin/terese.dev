@@ -17,6 +17,7 @@
     
     .title {
         @include h1;
+        max-width: 90%;
     }
     
     .body {
