@@ -1,11 +1,14 @@
 @use "../../../styles/base/mixins" as *;
 @use "../../../styles/base/colors" as *;
 @use "../../../styles/base/media-query" as *;
+@use "../../../styles/base/variables" as *;
 
 .menuButton {
-    z-index: 10;
-    position: relative;
     @include flex(column, center, center);
+    z-index: 10;
+    position: absolute;
+    top: $spacing-02;
+    right: $spacing-03;
     width: 4rem;
     height: 4rem;
     background-color: var(--button-color);
@@ -52,7 +55,14 @@
        }
     }
 
+    @media (min-width: $tablet) {
+        right: $spacing-04;
+    }
+    
     @media (min-width: $desktop) {
+        top: $spacing-04;
+        right: $spacing-06;
+
         &:hover {
             &::after {
                 transform: scale(1.25, 1.25);

@@ -11,19 +11,28 @@
     top: 0;
     @include flex(row, center, space-between);
     width: 100vw;
-    height: fit-content;
-    padding: $spacing-02 $spacing-03 0;
-
-    @media (min-width: $tablet) {
-        padding: $spacing-02 $spacing-04 0;
-    }
-    
-    @media (min-width: $desktop) {
-        padding: $spacing-04 $spacing-06 0;
-    }
+    height: 6rem;
 }
 
 .logo {
-    @include h3;
-    color: var(--text-color);
+    @include flex(column, flex-start, center);
+    position: absolute;
+    top: $spacing-02;
+    left: $spacing-03;
+    z-index: 10;
+    height: 4rem;
+    
+    h3 {
+        @include h3;
+        color: var(--text-color);
+    }
+
+    @media (min-width: $tablet) {
+        left: $spacing-04;
+    }
+    
+    @media (min-width: $desktop) {
+        top: $spacing-04;
+        left: $spacing-06;
+    }
 }

@@ -40,8 +40,8 @@ const Header = ({ menuData }) => {
 
   return (
     <header className={styles.header} style={colorStyle}>
-        <Link href="/">
-          <h3 className={styles.logo}>terese</h3>
+        <Link href="/" className={styles.logo}>
+          <h3>terese</h3>
         </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
         <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} color={menuData?.main_color}/>
