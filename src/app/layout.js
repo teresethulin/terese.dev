@@ -1,4 +1,4 @@
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { storyblokInit, apiPlugin, getStoryblokApi } from "@storyblok/react/rsc";
 
 import StoryblokProvider from "./components/StoryblokProvider";
 import Header from "./components/Header/index.js";
@@ -15,12 +15,22 @@ export const metadata = {
   description: "Home page of Terese Thulin",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const fetchMenuData = async () => {
+  let sbParams = { version: "draft" };
+ 
+  const storyblokApi = getStoryblokApi();
+  const { data: { story: { content } } } = await storyblokApi.get(`cdn/stories/config`, sbParams, {cache: "no-store"});
+  return content;
+  }
+
+  const menuData = await fetchMenuData();
+
   return (
     <StoryblokProvider>
       <html lang="en">
         <body>
-            <Header />
+            <Header menuData={menuData} />
           <main>
             {children}
           </main>
