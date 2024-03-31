@@ -7,7 +7,7 @@ export default async function Home() {
   const { data } = await fetchData();
 
   return (
-      <section className={styles.main}>
+      <section className={styles.container}>
         <StoryblokStory story={data.story} />
       </section>
   );
