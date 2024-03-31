@@ -13,7 +13,7 @@ export function useAnimatedText(text) {
             className="fadeIn"
             style={{ animationDelay: `${index * 0.2}s` }}
         >
-            {word + '\u00A0'}
+            {word + ' '}
         </span>
     ));
 };
