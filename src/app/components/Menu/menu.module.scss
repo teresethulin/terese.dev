@@ -11,7 +11,6 @@
     @include flex(column, flex-start, center);
     width: 0;
     height: 100vh;
-    height: 100svh;
     padding: $spacing-02 $spacing-03;
     color: var(--text-color);
     background-color: var(--bg-color);
