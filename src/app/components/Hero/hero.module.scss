@@ -3,6 +3,7 @@
 @use "../../../styles/base/variables" as *;
 @use "../../../styles/base/typography" as *;
 @use "../../../styles/base/media-query" as *;
+@use "../../../styles/base/animations" as *;
 
 .hero {
     @include flex(column, var(--alignHorizontal), center, $spacing-03);
@@ -18,6 +19,12 @@
     .title {
         @include h1;
         max-width: 90%;
+
+        // Animated text initial value
+        span {
+            display: inline-block;
+            opacity: 0;
+        }
     }
     
     .body {
