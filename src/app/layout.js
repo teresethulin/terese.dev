@@ -31,9 +31,7 @@ export default async function RootLayout({ children }) {
       <html lang="en">
         <body>
             <Header menuData={menuData} />
-          <main>
             {children}
-          </main>
         </body>
       </html>
     </StoryblokProvider>
