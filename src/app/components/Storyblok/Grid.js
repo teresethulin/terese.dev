@@ -1,12 +1,14 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+
+import styles from "./grid.module.scss";
  
 const Grid = ({ blok }) => {
   return (
-    <div  {...storyblokEditable(blok)}>
-      {blok.columns.map((nestedBlok) => (
+    <section {...storyblokEditable(blok)} className={styles.grid} style={{ backgroundColor: blok?.backgroundColor }}>
+      {blok?.columns?.map((nestedBlok) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
-    </div>
+    </section>
   );
 };
  
