@@ -1,4 +1,4 @@
-import { getStoryblokApi} from "@storyblok/react/rsc";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 
 import styles from "./page.module.scss";
