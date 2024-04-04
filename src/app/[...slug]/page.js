@@ -5,11 +5,11 @@ import { notFound } from 'next/navigation'
 import styles from "../page.module.scss";
 
 export default async function Page({ params }) {
-  const slug = params?.slug ? params.slug.join('/') : 'home'
-  const { data } = await fetchData(slug)
+  const slug = params?.slug ? params.slug.join('/') : 'home';
+  const { data } = await fetchData(slug);
 
   if (!data) {
-    return notFound()
+    return notFound();
   }
 
   return (
@@ -22,6 +22,6 @@ export default async function Page({ params }) {
 export async function fetchData(slug) {
   let sbParams = { version: "draft" };
 
-  const storyblokApi = getStoryblokApi()
-  return storyblokApi.get(`cdn/stories/${slug}`, sbParams)
+  const storyblokApi = getStoryblokApi();
+  return storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 }
