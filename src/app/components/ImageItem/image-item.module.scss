@@ -1,0 +1,20 @@
+@use "../../../styles/base/" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/colors" as *;
+
+.figure {
+    @include grid-item(1, 4);
+    
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    @media (min-width: $desktop) {
+        @include grid-item(var(--column-start), var(--column-span));
+    }
+}

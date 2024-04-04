@@ -6,6 +6,7 @@ import Grid from "./Storyblok/Grid";
 import Hero from "./Hero";
 import MenuItem from "./MenuItem";
 import Menu from "./Menu";
+import ImageItem from "./ImageItem";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
@@ -15,7 +16,8 @@ storyblokInit({
     grid: Grid,
     hero: Hero,
     menu_links: Menu,
-    menu_item: MenuItem
+    menu_item: MenuItem,
+    image_item: ImageItem
   },
 });
  
