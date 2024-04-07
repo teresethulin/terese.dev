@@ -1,0 +1,13 @@
+@use "../../../styles/base/" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/colors" as *;
+
+.heading {
+    @include grid-item(1, 4);
+
+    @media (min-width: $tablet) {
+        @include grid-item(var(--column-start), var(--column-span));
+    }
+}

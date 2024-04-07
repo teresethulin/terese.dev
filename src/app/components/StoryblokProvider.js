@@ -7,6 +7,7 @@ import Hero from "./Hero";
 import MenuItem from "./MenuItem";
 import Menu from "./Menu";
 import ImageItem from "./ImageItem";
+import HeadingItem from "./HeadingItem";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
@@ -17,7 +18,8 @@ storyblokInit({
     hero: Hero,
     menu_links: Menu,
     menu_item: MenuItem,
-    image_item: ImageItem
+    image_item: ImageItem,
+    heading_item: HeadingItem
   },
 });
  
