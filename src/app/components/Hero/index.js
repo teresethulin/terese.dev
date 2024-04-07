@@ -6,8 +6,8 @@ import styles from "./hero.module.scss";
 
 const Hero = ({ blok }) => {
   const alignment = {
-    "--alignHorizontal": blok.alignHorizontal,
-    "--text-align": blok.alignHorizontal.includes("center") ? "center" : "left"
+    "--alignHorizontal": blok?.alignHorizontal,
+    "--text-align": blok?.alignHorizontal.includes("center") ? "center" : "left"
   }
 
   const animatedHeading = useAnimatedText(blok.heading);
