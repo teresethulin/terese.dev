@@ -1,4 +1,3 @@
-// utils/useAnimatedHeading.js
 import '../styles/base/_animations.scss';
 
 export function useAnimatedText(text) {
