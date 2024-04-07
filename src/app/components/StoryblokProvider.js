@@ -8,6 +8,7 @@ import MenuItem from "./MenuItem";
 import Menu from "./Menu";
 import ImageItem from "./ImageItem";
 import HeadingItem from "./HeadingItem";
+import Sticker from "./Sticker";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
@@ -19,7 +20,8 @@ storyblokInit({
     menu_links: Menu,
     menu_item: MenuItem,
     image_item: ImageItem,
-    heading_item: HeadingItem
+    heading_item: HeadingItem,
+    sticker: Sticker
   },
 });
  
