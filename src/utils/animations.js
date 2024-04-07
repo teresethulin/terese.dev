@@ -10,7 +10,7 @@ export function useAnimatedText(text) {
     return words.map((word, index) => (
         <span
             key={index}
-            className="fadeIn"
+            className="fadeInFromBelow"
             style={{ animationDelay: `${index * 0.2}s` }}
         >
             {word + ' '}
