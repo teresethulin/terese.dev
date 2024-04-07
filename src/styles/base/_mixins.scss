@@ -49,7 +49,6 @@
 }
 
 @mixin grid-item($column-start, $column-span: null, $row-start: null) {
-    display: grid;
     grid-column-start: $column-start;
     grid-column-end: span $column-span;
     grid-row-start: $row-start;
