@@ -10,14 +10,14 @@
 }
 
 @mixin padding() {
-    padding: $spacing-05 $spacing-03;
+    padding: $spacing-03;
 
     @media (min-width: $tablet) {
-        padding: $spacing-05 $spacing-04;
+        padding: $spacing-08;
     }
 
     @media (min-width: $desktop) {
-        padding: $spacing-07 $spacing-06;
+        padding: $spacing-09;
     }
 }
 
@@ -49,6 +49,7 @@
 }
 
 @mixin grid-item($column-start, $column-span: null, $row-start: null) {
+    display: grid;
     grid-column-start: $column-start;
     grid-column-end: span $column-span;
     grid-row-start: $row-start;
