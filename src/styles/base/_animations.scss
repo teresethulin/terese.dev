@@ -1,4 +1,4 @@
-.fadeIn {
+.fadeInFromBelow {
     animation: fadeInFromBelow 1s ease-out forwards;
 }
 
@@ -11,4 +11,18 @@
         opacity: 1;
         transform: none;
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
 }
