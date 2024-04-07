@@ -1,0 +1,27 @@
+@use "../../../styles/base/" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/colors" as *;
+@use "../../../styles/base/animations" as *;
+
+.sticker {
+    @include grid-item(1, 4);
+    @include body();
+    height: fit-content;
+    padding: 1.25rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 3px dotted var(--text-color);
+    border-radius: 8px;
+    
+    @media (min-width: $tablet) {
+        @include grid-item(var(--column-start), var(--column-span));
+        font-size: 1rem;
+        margin-top: var(--margin-top-tablet);
+    }
+    
+    @media (min-width: $desktop) {
+        margin-top: var(--margin-top-desktop);
+    }
+}
