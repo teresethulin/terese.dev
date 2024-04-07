@@ -8,19 +8,19 @@
     display: grid;
     grid-column: 1 / -1;
 
-    &[style*="--heading-type:h1"] {
+    &.h1 {
         @include h1();
     }
 
-    &[style*="--heading-type:h2"] {
+    &.h2 {
         @include h2();
     }
 
-    &[style*="--heading-type:h3"] {
+    &.h3 {
         @include h3();
     }
 
-    &[style*="--heading-type:h4"] {
+    &.h4 {
         @include h4();
     }
 
