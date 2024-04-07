@@ -5,7 +5,8 @@
 @use "../../../styles/base/colors" as *;
 
 .heading {
-    @include grid-item(1, 4);
+    display: grid;
+    grid-column: 1 / -1;
 
     &[style*="--heading-type:h1"] {
         @include h1();
@@ -24,6 +25,11 @@
     }
 
     @media (min-width: $tablet) {
+        margin-bottom: $spacing-04;
+    }
+    
+    @media (min-width: $desktop) {
         @include grid-item(var(--column-start), var(--column-span));
+        margin-bottom: $spacing-06;
     }
 }
