@@ -13,7 +13,7 @@ const MenuButton = React.forwardRef(({ onClick, isOpen, color }, ref) => {
  };
 
   return (
-    <button ref={ref} className={buttonClasses} onClick={onClick} style={buttonStyle}>
+    <button ref={ref} aria-label="menu" className={buttonClasses} onClick={onClick} style={buttonStyle}>
         <span className={styles.burger}>
             <span className={styles.line}/>
             <span className={styles.line}/>

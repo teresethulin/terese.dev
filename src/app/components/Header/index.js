@@ -40,7 +40,7 @@ const Header = ({ menuData }) => {
 
   return (
     <header className={styles.header} style={colorStyle}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/" aria-label="home" className={styles.logo}>
           <h3>terese</h3>
         </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
