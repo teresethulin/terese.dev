@@ -2,8 +2,6 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import { notFound } from 'next/navigation'
 
-import styles from "../page.module.scss";
-
 export default async function Page({ params }) {
   const slug = params?.slug ? params.slug.join('/') : 'home';
   const { data } = await fetchData(slug);
@@ -13,9 +11,7 @@ export default async function Page({ params }) {
   }
 
   return (
-      <section className={styles.main}>
-        <StoryblokStory story={data.story} />
-      </section>
+    <StoryblokStory story={data.story} />
   );
 }
 
