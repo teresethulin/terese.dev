@@ -7,6 +7,22 @@
 .heading {
     @include grid-item(1, 4);
 
+    &[style*="--heading-type:h1"] {
+        @include h1();
+    }
+
+    &[style*="--heading-type:h2"] {
+        @include h2();
+    }
+
+    &[style*="--heading-type:h3"] {
+        @include h3();
+    }
+
+    &[style*="--heading-type:h4"] {
+        @include h4();
+    }
+
     @media (min-width: $tablet) {
         @include grid-item(var(--column-start), var(--column-span));
     }

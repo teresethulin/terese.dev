@@ -6,6 +6,7 @@ const HeadingItem = ({ blok }) => {
     const itemStyles = {
         "--column-start": blok?.column_start,
         "--column-span": blok?.column_span,
+        "--heading-type": blok.type
     };
 
     const HeadingElement = blok.type;
