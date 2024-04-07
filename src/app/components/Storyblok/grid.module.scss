@@ -1,7 +1,17 @@
+@use "../../../styles/base" as *;
 @use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/variables" as *;
 
 .grid {
     @include grid;
     width: 100vw;
     height: auto;
+
+    &:first-child {
+        padding-top: 6rem;
+
+        @media (min-width: $desktop) {
+            padding-top: 12rem;
+        }
+    }
 }
