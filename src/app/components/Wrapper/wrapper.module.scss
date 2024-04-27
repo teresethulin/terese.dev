@@ -1,5 +1,5 @@
 @use "../../../styles/base/mixins" as *;
-@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/fonts" as *;
 
 .grid {
     @include grid;
