@@ -1,35 +1,44 @@
-import { getStoryblokApi } from "@storyblok/react/rsc";
-import { initStoryblok } from "../storyblok";
-import StoryblokProvider from "./components/StoryblokProvider";
-import Header from "./components/Header/index.js";
+import { getStoryblokApi } from '@storyblok/react/rsc';
+import { initStoryblok } from '../storyblok';
+import StoryblokProvider from './components/StoryblokProvider';
+import Header from './components/Header/index.js';
+import { Work_Sans } from 'next/font/google';
 
-import "./globals.css";
+import './globals.css';
+
+const WorkSans = Work_Sans({ weight: '400', subsets: ['latin'] });
 
 export const metadata = {
-  title: "Terese Thulin | Developer + Designer",
-  description: "Home page of Terese Thulin",
+  title: 'Terese Thulin | Developer + Designer',
+  description: 'Home page of Terese Thulin',
 };
 
 export default async function RootLayout({ children }) {
   const fetchMenuData = async () => {
     initStoryblok();
-    let sbParams = { version: "draft" };
-  
+    let sbParams = { version: 'draft' };
+
     const storyblokApi = getStoryblokApi();
-    const { data: { story: { content } } } = await storyblokApi.get(`cdn/stories/config`, sbParams, {cache: "no-store"});
+    const {
+      data: {
+        story: { content },
+      },
+    } = await storyblokApi.get(`cdn/stories/config`, sbParams, {
+      cache: 'no-store',
+    });
     return content;
-  }
+  };
 
   const menuData = await fetchMenuData();
 
   return (
     <html lang="en">
-        <body>
-          <StoryblokProvider>
-            <Header menuData={menuData} />
-            {children}
-          </StoryblokProvider>
-        </body>
-      </html>
+      <body className={WorkSans.className}>
+        <StoryblokProvider>
+          <Header menuData={menuData} />
+          {children}
+        </StoryblokProvider>
+      </body>
+    </html>
   );
 }
