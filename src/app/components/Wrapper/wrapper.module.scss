@@ -1,7 +1,9 @@
 @use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/typography" as *;
 
 .grid {
     @include grid;
+    font-family: "Work Sans";
     width: 100vw;
     height: 100vh;
 }

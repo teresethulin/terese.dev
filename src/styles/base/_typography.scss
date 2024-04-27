@@ -95,11 +95,10 @@
 }
 
 @mixin menu-item() {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: -.02rem;
-    text-transform: uppercase;
-    font-family: "Work Sans", sans-serif;
+    font-family: "Sporting Grotesque", sans-serif;
     margin-bottom: 1.5rem;
     
     @media (min-width: $tablet) {
