@@ -1,7 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react";
+import { initStoryblok } from "../../storyblok";
 import StoryblokStory from "@storyblok/react/story";
 import { notFound } from 'next/navigation';
-import { initStoryblok } from "../../storyblok";
 
 export default async function Page({ params }) {
   const slug = params?.slug ? params.slug.join('/') : 'home';

@@ -1,4 +1,5 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
+import { initStoryblok } from "../storyblok";
 import StoryblokProvider from "./components/StoryblokProvider";
 import Header from "./components/Header/index.js";
 
@@ -11,11 +12,12 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const fetchMenuData = async () => {
-  let sbParams = { version: "draft" };
- 
-  const storyblokApi = getStoryblokApi();
-  const { data: { story: { content } } } = await storyblokApi.get(`cdn/stories/config`, sbParams, {cache: "no-store"});
-  return content;
+    initStoryblok();
+    let sbParams = { version: "draft" };
+  
+    const storyblokApi = getStoryblokApi();
+    const { data: { story: { content } } } = await storyblokApi.get(`cdn/stories/config`, sbParams, {cache: "no-store"});
+    return content;
   }
 
   const menuData = await fetchMenuData();
