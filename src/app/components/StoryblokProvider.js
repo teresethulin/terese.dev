@@ -1,5 +1,5 @@
 "use client";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { initStoryblok } from "../../storyblok";
 
 import Page from "./Storyblok/Page";
 import Grid from "./Storyblok/Grid";
@@ -10,9 +10,7 @@ import ImageItem from "./ImageItem";
 import HeadingItem from "./HeadingItem";
 import Sticker from "./Sticker";
 
-storyblokInit({
-  accessToken: process.env.storyblokApiToken,
-  use: [apiPlugin],
+initStoryblok({
   components: {
     page: Page,
     grid: Grid,
