@@ -1,14 +1,8 @@
-import { storyblokInit, apiPlugin, getStoryblokApi } from "@storyblok/react/rsc";
-
+import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import Header from "./components/Header/index.js";
 
 import "./globals.css";
- 
-storyblokInit({
-  accessToken: process.env.storyblokApiToken,
-  use: [apiPlugin]
-});
 
 export const metadata = {
   title: "Terese Thulin | Developer + Designer",
@@ -27,13 +21,13 @@ export default async function RootLayout({ children }) {
   const menuData = await fetchMenuData();
 
   return (
-    <StoryblokProvider>
-      <html lang="en">
+    <html lang="en">
         <body>
+          <StoryblokProvider>
             <Header menuData={menuData} />
             {children}
+          </StoryblokProvider>
         </body>
       </html>
-    </StoryblokProvider>
   );
 }
