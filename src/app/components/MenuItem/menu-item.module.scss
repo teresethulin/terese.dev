@@ -6,19 +6,20 @@
 
 .menuItem {
     @include menu-item;
+
     opacity: 0;
 
     &.open {
         opacity: 1;
-        transition-property: opacity;
-        transition-duration: 1s;
         transition-timing-function: ease-in;
+        transition-duration: 1s;
+        transition-property: opacity;
 
         @media (min-width: $desktop) {
             &:hover {
                 color: var(--hover-color);
             }
-        
+
             &:active {
                 color: var(--active-color);
             }

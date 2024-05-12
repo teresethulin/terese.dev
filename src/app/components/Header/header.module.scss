@@ -7,15 +7,17 @@
 
 .header {
     position: fixed;
-    z-index: 200;
     top: 0;
-    @include flex(row, center, space-between);
+    z-index: 200;
     width: 100vw;
     height: 6rem;
+
+    @include flex(row, center, space-between);
 }
 
 .logo {
     @include flex(column, flex-start, center);
+
     position: absolute;
     top: $spacing-02;
     left: $spacing-03;
@@ -24,6 +26,7 @@
     
     h3 {
         @include h3;
+
         color: var(--text-color);
     }
 

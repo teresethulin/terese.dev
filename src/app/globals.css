@@ -3,11 +3,11 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --primary-10: #CCCCFF;
-  --primary-20: #9999FF;
-  --primary-30: #6666FF;
-  --primary-40: #3333FF;
-  --primary-50: #0000FF;
+  --primary-10: #CCF;
+  --primary-20: #99F;
+  --primary-30: #66F;
+  --primary-40: #33F;
+  --primary-50: #00F;
   --primary-60: #0A0AC2;
   --primary-70: #0F0F8A;
   --primary-80: #0F0F57;
@@ -47,7 +47,7 @@
   --turquoise-60: #26A4A6;
   --turquoise-70: #247475;
   --turquoise-80: #1D4849;
-  --turquoise-90: #112222;
+  --turquoise-90: #122;
   --neutral-10: #F9F9FB;
   --neutral-20: #E1E1E9;
   --neutral-30: #D3D3DE;
@@ -75,8 +75,8 @@ body {
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
   color: #00F;
+  font-family: "Work Sans", sans-serif;
   background: #FEFEFE;
 }
 

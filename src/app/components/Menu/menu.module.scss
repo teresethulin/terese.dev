@@ -8,17 +8,17 @@
     position: fixed;
     top: 0;
     right: 0;
-    @include flex(column, flex-start, center);
     width: 0;
     height: 100vh;
     padding: $spacing-02 $spacing-03;
+    overflow: hidden auto;
     color: var(--text-color);
     background-color: var(--bg-color);
-    transform-origin: right;
-    overflow-x: hidden;
-    overflow-y: auto;
     transform: scaleX(0);
+    transform-origin: right;
     transition: transform .6s cubic-bezier(0.5, 0, 0, 1) 0s, width .6s cubic-bezier(0.5, 0, 0, 1) 0s;
+
+    @include flex(column, flex-start, center);
     
     &.open {
         width: 100vw;
@@ -32,8 +32,8 @@
     }
     
     .menuList {
-        list-style-type: none;
         padding: 0;
+        list-style-type: none;
         opacity: 0;
     }
 

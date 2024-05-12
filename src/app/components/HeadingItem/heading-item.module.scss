@@ -30,6 +30,7 @@
     
     @media (min-width: $desktop) {
         @include grid-item(var(--column-start), var(--column-span));
+
         margin-bottom: $spacing-06;
     }
 }

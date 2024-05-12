@@ -6,9 +6,9 @@
 
 @mixin h1() {
     font-size: 3rem;
+    font-family: "Sporting Grotesque_Bold", sans-serif;
     line-height: 3.5rem;
     letter-spacing: -1px;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
 
     @media (min-width: $tablet) {
         font-size: 4.5rem;
@@ -23,8 +23,8 @@
 
 @mixin h2() {
     font-size: 1.5rem;
-    line-height: 1.8125rem;
     font-family: "Sporting Grotesque_Bold", sans-serif;
+    line-height: 1.8125rem;
 
     @media (min-width: $tablet) {
         font-size: 2rem;
@@ -39,8 +39,8 @@
 
 @mixin h3() {
     font-size: 1.25rem;
-    line-height: 1.5rem;
     font-family: "Sporting Grotesque_Bold", sans-serif;
+    line-height: 1.5rem;
 
     @media (min-width: $tablet) {
         font-size: 1.5rem;
@@ -55,8 +55,8 @@
 
 @mixin h4() {
     font-size: 1.125rem;
-    line-height: 1.375rem;
     font-family: "Sporting Grotesque_Bold", sans-serif;
+    line-height: 1.375rem;
 
     @media (min-width: $tablet) {
         font-size: 1.25rem;
@@ -71,8 +71,8 @@
 
 @mixin body() {
     font-size: 1rem;
-    line-height: 1.5rem;
     font-family: "Work Sans", sans-serif;
+    line-height: 1.5rem;
 
     &:not(:last-child) {
         margin-bottom: 0.375rem;
@@ -86,8 +86,8 @@
 
 @mixin link() {
     font-size: 1rem;
-    line-height: 1.1875rem;
     font-family: "Work Sans", sans-serif;
+    line-height: 1.1875rem;
     
     @media (min-width: $desktop) {
         font-size: 1.125rem;
@@ -96,27 +96,27 @@
 }
 
 @mixin menu-item() {
+    margin-bottom: 1.5rem;
     font-size: 2rem;
+    font-family: "Sporting Grotesque_Bold", sans-serif;
     line-height: 3rem;
     letter-spacing: -.02rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
-    margin-bottom: 1.5rem;
 
     &:last-of-type {
         margin-bottom: 0;
     }
     
     @media (min-width: $tablet) {
-        font-size: 2.5rem;
         margin-bottom: 4rem;
+        font-size: 2.5rem;
     }
 }
 
 @mixin overline() {
     font-size: 0.875rem;
+    font-family: "Work Sans", sans-serif;
     line-height: 1.0625rem;
     letter-spacing: 0.25rem;
-    font-family: "Work Sans", sans-serif;
     text-transform: uppercase;
 
     @media (min-width: $tablet) {
