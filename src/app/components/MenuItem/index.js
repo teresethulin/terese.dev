@@ -1,5 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
-import Link from "next/link";
+import { Link, animateScroll as scroll } from "react-scroll";
 import classNames from 'classnames';
 
 import styles from "./menu-item.module.scss";
@@ -21,7 +21,7 @@ const MenuItem = ({ blok, isOpen, setIsOpen, color }) => {
 
     return (
         <li className={itemClasses} style={colorStyle} data-menu-item>
-            <Link href={blok?.link?.cached_url} {...storyblokEditable(blok)} onClick={toggleMenu}>
+            <Link to={blok?.link?.anchor} {...storyblokEditable(blok)} smooth duration={550} onClick={toggleMenu}>
                 {blok?.name}
             </Link>
         </li>
