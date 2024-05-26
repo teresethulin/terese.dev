@@ -1,4 +1,6 @@
 import { storyblokEditable } from "@storyblok/react";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 import Wrapper from "../Wrapper";
 import { useAnimatedText } from "@/utils/animations";
 
@@ -22,7 +24,7 @@ const Hero = ({ blok }) => {
         {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
         {blok?.heading && <h1 className={styles.title}>{animatedHeading}</h1>}
         {blok?.body && <p className={styles.body}>{blok?.body}</p>}
-        {blok?.buttonText && <a href={`#${blok?.link?.anchor}`} className={styles.cta} style={color}>{blok?.buttonText}</a>}
+        {blok?.buttonText && <Link to={blok?.link?.anchor} smooth duration={550} className={styles.cta} style={color}>{blok?.buttonText}</Link>}
       </div>
     </Wrapper>
   );
