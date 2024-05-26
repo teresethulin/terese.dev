@@ -23,7 +23,8 @@
     left: $spacing-03;
     z-index: 10;
     height: 4rem;
-    
+    cursor: pointer;
+
     h3 {
         @include h3;
 
@@ -33,7 +34,7 @@
     @media (min-width: $tablet) {
         left: $spacing-04;
     }
-    
+
     @media (min-width: $desktop) {
         top: $spacing-04;
         left: $spacing-06;
