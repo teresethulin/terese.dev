@@ -7,15 +7,17 @@
 
 .fadeIn {
     @include grid-item(1, 4);
-    
+
     img {
         width: 100%;
         height: auto;
+        -o-object-fit: cover;
         object-fit: cover;
         border-radius: 8px;
     }
-    
+
     @media (min-width: $tablet) {
         @include grid-item(var(--column-start), var(--column-span));
+        margin-bottom: 3rem;
     }
 }

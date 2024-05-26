@@ -3,6 +3,7 @@
 @use "../base/mixins" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 @mixin h1() {
     font-size: 3rem;
@@ -125,4 +126,13 @@
         line-height: 1.3125rem;
         letter-spacing: 0.5rem;
     }
+}
+
+@mixin pretitle() {
+    font-size: 1rem;
+    font-family: "Prata", serif;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.1px;
+    margin: 0 0 $spacing-04;
 }

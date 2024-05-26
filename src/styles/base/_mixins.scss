@@ -10,7 +10,7 @@
 }
 
 @mixin padding() {
-    padding: $spacing-08 $spacing-03 $spacing-03;
+    padding: $spacing-08 $spacing-03;
 
     @media (min-width: $tablet) {
         padding: $spacing-08;
