@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link.js";
+import { Link, animateScroll as scroll } from "react-scroll";
 import Menu from "../Menu/index.js";
 import MenuButton from "../MenuButton/index.js";
 
@@ -34,13 +34,17 @@ const Header = ({ menuData }) => {
     };
  }, [menuRef, menuButtonRef]);
 
+ const scrollToTop = () => {
+    scroll.scrollToTop();
+};
+
  const colorStyle = {
   "--text-color": `var(--${menuData?.main_color}-50)`
  };
 
   return (
     <header className={styles.header} style={colorStyle}>
-        <Link href="/" aria-label="home" className={styles.logo}>
+        <Link onClick={scrollToTop} smooth duration={550} aria-label="home" className={styles.logo}>
           <h3>terese</h3>
         </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
