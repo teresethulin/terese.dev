@@ -1,12 +1,17 @@
 @use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/media-query" as *;
 
 .grid {
     @include grid;
 
     width: 100vw;
-    min-height: calc(100vh - 6rem);
+    min-height: calc(100vh - 3rem);
 
-    @supports (height: 100svh) {
-        min-height: calc(100svh - 6rem);
+    @supports (height: 100dvh) {
+        height: 100dvh;
+    }
+
+    @media (min-width: $desktop) {
+        height: 100vh;
     }
 }
