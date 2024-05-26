@@ -8,6 +8,7 @@
     @include menu-item;
 
     opacity: 0;
+    cursor: pointer;
 
     &.open {
         opacity: 1;

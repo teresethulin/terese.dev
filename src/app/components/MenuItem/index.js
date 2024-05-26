@@ -15,8 +15,8 @@ const MenuItem = ({ blok, isOpen, setIsOpen, color }) => {
 
     const colorStyle = {
         "--text-color": `var(--${color}-50)`,
-        "--hover-color": `var(--${color}-60)`,
-        "--active-color": `var(--${color}-80)`
+        "--hover-color": `var(--${color}-30)`,
+        "--active-color": `var(--${color}-60)`
     };
 
     return (
