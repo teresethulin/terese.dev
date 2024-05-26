@@ -1,0 +1,32 @@
+@use "../../../styles/base/media-query" as *;
+@use "../../../styles/base/fonts" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/colors" as *;
+
+.card {
+  @include flex(column, flex-start, flex-start);
+  @include grid-item(1, 4);
+
+  border: 1px solid var(--selected-color);
+  border-radius: $spacing-01;
+  box-shadow: 5px 5px var(--selected-color);
+
+  .body {
+    @include body;
+    margin-bottom: $spacing-03 !important;
+
+    &:last-of-type {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    @include grid-item(var(--column-start), var(--column-span));
+  }
+
+    @media (min-width: $desktop) {
+      padding: $spacing-05;
+    }
+}
