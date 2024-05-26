@@ -10,7 +10,7 @@ const WorkSans = Work_Sans({ weight: '400', subsets: ['latin'] });
 
 export const metadata = {
   title: 'Terese Thulin | Developer + Designer',
-  description: 'Home page of Terese Thulin',
+  description: 'CV & portfolio site',
 };
 
 export default async function RootLayout({ children }) {
