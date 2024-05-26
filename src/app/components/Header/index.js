@@ -44,7 +44,7 @@ const Header = ({ menuData }) => {
 
   return (
     <header className={styles.header} style={colorStyle}>
-        <Link onClick={scrollToTop} smooth duration={550} aria-label="home" className={styles.logo}>
+        <Link to="" onClick={scrollToTop} smooth duration={550} aria-label="home" className={styles.logo}>
           <h3>terese</h3>
         </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
