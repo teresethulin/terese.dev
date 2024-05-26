@@ -24,10 +24,13 @@ const Card = ({ blok }) => {
     });
 
     return (
-        <article {...storyblokEditable(blok)} className={styles.card} style={itemStyles}>
+      <div {...storyblokEditable(blok)} className={styles.wrapper} style={itemStyles}>
+        {blok?.pretitle && <aside className={styles.pretitle}>{blok?.pretitle}</aside>}
+        <article className={styles.card}>
           {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
           {paragraphs}
         </article>
+      </div>
     );
 };
 
