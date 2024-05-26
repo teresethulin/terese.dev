@@ -9,7 +9,7 @@ const Card = ({ blok }) => {
         "--column-span": blok?.column_span,
         "--text-color": blok?.textColor,
         "--bg-color": blok?.backgroundColor,
-        "--margin-bottom-desktop": blok?.marginBottomDesktop
+        "--margin-top": blok?.marginTop + "rem"
     };
 
     const HeadingTag = (level) => {
@@ -58,7 +58,7 @@ const Card = ({ blok }) => {
         if (item.type === "paragraph") {
             return (
                 <p key={index} className={styles.body}>
-                    {item.content.map((textItem, textIndex) => (
+                    {item.content?.map((textItem, textIndex) => (
                         <React.Fragment key={textIndex}>{textItem.text}</React.Fragment>
                     ))}
                 </p>
@@ -66,6 +66,35 @@ const Card = ({ blok }) => {
         }
         return null;
     });
+
+    const renderListItems = (items) => {
+        return items.map((item, index) => {
+            if (item.type === "list_item") {
+                return (
+                    <li key={index} className={styles.body}>
+                        {item.content.map((innerItem, innerIndex) => {
+                        const textElements = innerItem.content?.map((textItem, textIndex) => {
+                            const linkMark = textItem.marks?.find(mark => mark.type === "link");
+                            if (linkMark) {
+                                return `<a href="${linkMark.attrs.href}" target="_blank" rel="noopener noreferrer">${textItem.text}</a>`;;
+                            } else {
+                                return textItem.text;
+                            }
+                        });
+                        return <p key={innerIndex} dangerouslySetInnerHTML={{ __html: textElements?.join('') }}></p>;
+                    })}
+                    </li>
+                );
+            }
+            return null;
+        });
+    };
+
+    const bulletLists = blok?.text?.content?.filter(item => item.type === "bullet_list").map(list => (
+        <ul key={list.uuid || Math.random()} style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+            {renderListItems(list.content)}
+        </ul>
+    ));
 
     return (
       <div {...storyblokEditable(blok)} className={styles.wrapper} style={itemStyles}>
@@ -75,6 +104,7 @@ const Card = ({ blok }) => {
           {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
           {headings}
           {paragraphs}
+          {bulletLists}
         </article>
       </div>
     );

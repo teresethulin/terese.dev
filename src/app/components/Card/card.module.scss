@@ -8,6 +8,7 @@
 
 .wrapper {
   @include grid-item(1, 4);
+  margin-top: var(--margin-top);
 
   .pretitle {
     @include pretitle;
@@ -61,20 +62,37 @@
         margin-bottom: 0;
       }
     }
+
+    ul {
+      margin-top: $spacing-03;
+
+      a {
+        border-bottom: 1px solid var(--text-color);
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
   }
 
   @media (min-width: $tablet) {
     @include grid-item(var(--column-start), var(--column-span));
-  }
-
-  @media (min-width: $desktop) {
-    margin-top: var(--margin-top-desktop);
 
     .card {
       padding: $spacing-05;
+    }
+  }
 
+  @media (min-width: $desktop) {
+
+    .card {
       .date {
         left: calc($spacing-05 - $spacing-01);
+      }
+
+      ul {
+        margin-top: $spacing-04;
       }
     }
   }
