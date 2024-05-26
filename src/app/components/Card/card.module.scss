@@ -10,16 +10,31 @@
   @include grid-item(1, 4);
 
   .pretitle {
-    margin: 0 0 $spacing-06;
+    @include pretitle;
   }
 
   .card {
     @include flex(column, flex-start, flex-start);
 
+    position: relative;
     padding: $spacing-03;
-    border: 1px solid var(--selected-color);
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-color);
     border-radius: $spacing-01;
-    box-shadow: 5px 5px var(--selected-color);
+    box-shadow: 5px 5px var(--text-color);
+
+    .date {
+      position: absolute;
+      top: -0.9rem;
+      left: calc($spacing-03 - $spacing-01);
+      font-size: 0.75rem;
+      padding: $spacing-01;
+      background: var(--bg-color);
+    }
+
+    .overline {
+      @include overline;
+    }
 
     .body {
       @include body;
@@ -29,20 +44,21 @@
         margin-bottom: 0;
       }
     }
-
   }
 
   @media (min-width: $tablet) {
     @include grid-item(var(--column-start), var(--column-span));
-
-    .pretitle {
-        margin: $spacing-06 0 $spacing-06;
-      }
   }
 
   @media (min-width: $desktop) {
+    margin-top: var(--margin-top-desktop);
+
     .card {
       padding: $spacing-05;
+
+      .date {
+        left: calc($spacing-05 - $spacing-01);
+      }
     }
   }
 }

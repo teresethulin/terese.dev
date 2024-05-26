@@ -7,7 +7,9 @@ const Card = ({ blok }) => {
     const itemStyles = {
         "--column-start": blok?.column_start,
         "--column-span": blok?.column_span,
-        "--selected-color": blok?.textColor
+        "--text-color": blok?.textColor,
+        "--bg-color": blok?.backgroundColor,
+        "--margin-bottom-desktop": blok?.marginBottomDesktop
     };
 
     const paragraphs = blok?.text?.content?.map((item, index) => {
@@ -27,6 +29,7 @@ const Card = ({ blok }) => {
       <div {...storyblokEditable(blok)} className={styles.wrapper} style={itemStyles}>
         {blok?.pretitle && <aside className={styles.pretitle}>{blok?.pretitle}</aside>}
         <article className={styles.card}>
+          {blok?.date && <span className={styles.date}>{blok?.date}</span>}
           {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
           {paragraphs}
         </article>
