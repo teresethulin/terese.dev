@@ -9,7 +9,8 @@ const Card = ({ blok }) => {
         "--column-span": blok?.column_span,
         "--text-color": blok?.textColor,
         "--bg-color": blok?.backgroundColor,
-        "--margin-top": blok?.marginTop + "rem"
+        "--margin-top": blok?.marginTop + "rem",
+        "--margin-top-desktop": blok?.marginTopDesktop + "rem"
     };
 
     const HeadingTag = (level) => {
