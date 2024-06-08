@@ -6,7 +6,7 @@
 @use "../../../styles/base/animations" as *;
 
 .hero {
-    @include flex(column, var(--alignHorizontal), center, $spacing-03);
+    @include flex(column, var(--alignHorizontal), center);
     @include grid-item(1, 4);
     position: relative;
 
@@ -37,9 +37,9 @@
 
     .cta {
         @include flex(row, center, center);
-        position: absolute;
-        bottom: 0;
+        position: relative;
         height: 48px;
+        margin: auto 0 0;
         padding: 0 $spacing-03;
         font-family: "Work Sans";
         font-size: 1rem;
@@ -48,16 +48,36 @@
         border: 2px solid var(--selected-color);
         border-radius: 42px;
         transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
         cursor: pointer;
 
-        &:hover {
+        &::before {
+            @include flex(row, center, center);
+            content: attr(title);
+            color: var(--selected-color);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+        &::after {
+            @include flex(row, center, center);
+            content: attr(title);
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100%;
             background-color: var(--selected-color);
             color: var(--neutral-10);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        &:active {
-            background-color: var(--selected-color);
-            color: var(--neutral-10);
+        &:hover {
+            &::before {
+                transform: translateY(-160%);
+            }
+
+            &::after {
+                transform: translateY(-100%);
+            }
         }
     }
 
@@ -68,4 +88,8 @@
     @media (min-width: $desktop) {
         @include grid-item(1, 12);
     }
+}
+
+.hero > * {
+    margin: $spacing-03;
 }

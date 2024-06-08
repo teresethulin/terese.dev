@@ -24,7 +24,7 @@ const Hero = ({ blok }) => {
         {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
         {blok?.heading && <h1 className={styles.title}>{animatedHeading}</h1>}
         {blok?.body && <p className={styles.body}>{blok?.body}</p>}
-        {blok?.buttonText && <Link to={blok?.link?.anchor} smooth duration={550} className={styles.cta} style={color}>{blok?.buttonText}</Link>}
+        {blok?.buttonText && <Link to={blok?.link?.anchor} smooth duration={550} className={styles.cta} style={color} title={blok?.buttonText}/>}
       </div>
     </Wrapper>
   );
