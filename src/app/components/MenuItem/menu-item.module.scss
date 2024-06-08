@@ -7,18 +7,58 @@
 .menuItem {
     @include menu-item;
 
+    width: -webkit-fit-content;
+
+    width: -moz-fit-content;
+
+    width: fit-content;
     opacity: 0;
     cursor: pointer;
 
     &.open {
+        position: relative;
         opacity: 1;
         transition-timing-function: ease-in;
         transition-duration: 1s;
         transition-property: opacity;
 
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: var(--text-color);
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            transition: width 0s cubic-bezier(.14, .79, .39, 1),
+                background .4s cubic-bezier(.14, .79, .39, 1);
+            }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 2.2%;
+            background: var(--text-color);
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            transition: width .3s cubic-bezier(.14, .79, .39, 1) 0s;
+            }
+
         @media (min-width: $desktop) {
             &:hover {
-                color: var(--hover-color);
+                &::before {
+                width: 97.8%;
+                background: var(--text-color);
+                transition: width .75s cubic-bezier(.14, .79, .39, 1) 0s;
+                }
+
+                &::after {
+                    width: 97.8%;
+                    background: 0 0;
+                    transition: width .3s cubic-bezier(.14, .79, .39, 1) 0s;
+                }
             }
 
             &:active {
