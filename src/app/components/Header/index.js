@@ -6,7 +6,7 @@ import MenuButton from "../MenuButton/index.js";
 
 import styles from "./header.module.scss";
 
-const Header = ({ menuData }) => {
+const Header = ({ configData }) => {
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Header = ({ menuData }) => {
 };
 
  const colorStyle = {
-  "--text-color": `var(--${menuData?.main_color}-50)`
+  "--text-color": `var(--${configData?.main_color}-50)`
  };
 
   return (
@@ -47,8 +47,8 @@ const Header = ({ menuData }) => {
         <Link to="" onClick={scrollToTop} smooth duration={550} aria-label="home" className={styles.logo}>
           <h3>terese</h3>
         </Link>
-        <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} menuData={menuData}/>
-        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} color={menuData?.main_color}/>
+        <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} configData={configData}/>
+        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} color={configData?.main_color}/>
     </header>
   );
 };

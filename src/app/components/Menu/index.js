@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from "./menu.module.scss";
 
-const Menu = React.forwardRef(({ isOpen, setIsOpen, menuData }, ref) => {
+const Menu = React.forwardRef(({ isOpen, setIsOpen, configData }, ref) => {
   Menu.displayName = "Menu";
 
  useEffect(() => {
@@ -21,15 +21,15 @@ const Menu = React.forwardRef(({ isOpen, setIsOpen, menuData }, ref) => {
  });
 
  const colorStyle = {
-  "--bg-color": menuData?.bg_color,
-  "--text-color": `var(--${menuData?.main_color}-50)`
+  "--bg-color": configData?.bg_color,
+  "--text-color": `var(--${configData?.main_color}-50)`
  };
 
   return (
     <nav className={menuClasses} ref={ref} style={colorStyle}>
-      <ul className={styles.menuList} {...storyblokEditable({menuData})}>
-        {menuData?.menu_links?.map((nestedBlok) => (
-          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} setIsOpen={setIsOpen} color={menuData?.main_color} />
+      <ul className={styles.menuList} {...storyblokEditable({configData})}>
+        {configData?.menu_links?.map((nestedBlok) => (
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} setIsOpen={setIsOpen} color={configData?.main_color} />
         ))}
       </ul>
     </nav>
