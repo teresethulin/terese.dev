@@ -10,6 +10,7 @@ import ImageItem from "./ImageItem";
 import HeadingItem from "./HeadingItem";
 import Sticker from "./Sticker";
 import Card from "./Card";
+import Footer from "./Footer";
 
 initStoryblok({
   components: {
@@ -21,7 +22,8 @@ initStoryblok({
     image_item: ImageItem,
     heading_item: HeadingItem,
     sticker: Sticker,
-    card: Card
+    card: Card,
+    footer: Footer
   },
 });
 

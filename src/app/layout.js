@@ -2,6 +2,7 @@ import { getStoryblokApi } from '@storyblok/react/rsc';
 import { initStoryblok } from '../storyblok';
 import StoryblokProvider from './components/StoryblokProvider';
 import Header from './components/Header/index.js';
+import Footer from './components/Footer';
 import { Work_Sans } from 'next/font/google';
 
 import './globals.css';
@@ -14,7 +15,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const fetchMenuData = async () => {
+  const fetchConfigData = async () => {
     initStoryblok();
     let sbParams = { version: 'draft' };
 
@@ -29,14 +30,15 @@ export default async function RootLayout({ children }) {
     return content;
   };
 
-  const menuData = await fetchMenuData();
+  const configData = await fetchConfigData();
 
   return (
     <html lang="en">
       <body className={WorkSans.className}>
         <StoryblokProvider>
-          <Header menuData={menuData} />
+          <Header configData={configData} />
           {children}
+          <Footer configData={configData} />
         </StoryblokProvider>
       </body>
     </html>
