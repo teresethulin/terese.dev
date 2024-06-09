@@ -38,6 +38,7 @@
     .cta {
         @include flex(row, center, center);
         position: relative;
+        z-index: 0;
         height: 48px;
         margin: auto 0 0;
         padding: 0 $spacing-03;
