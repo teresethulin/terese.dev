@@ -23,6 +23,7 @@
   summary {
     @include flex(column, flex-start, flex-start);
     padding: $spacing-03;
+    list-style: none;
 
     .chevron {
       position: absolute;
