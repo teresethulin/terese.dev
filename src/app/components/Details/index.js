@@ -1,6 +1,7 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 import Chevron from "../../../../public/icons/chevron-down.svg";
 import styles from "./details.module.scss";
@@ -100,8 +101,24 @@ const Details = ({ blok }) => {
       </ul>
   ));
 
+  const cardVariants = {
+  offscreen: {
+    y: 300
+  },
+  onscreen: {
+    y: 50,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+};
+
   return (
-      <details open={blok?.showAsOpen} {...storyblokEditable(blok)} className={styles.details} style={itemStyles}>
+      <motion.details initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }} variants={cardVariants} open={blok?.showAsOpen} {...storyblokEditable(blok)} className={styles.details} style={itemStyles}>
         {blok?.pretitle && <aside className={styles.pretitle}>{blok?.pretitle}</aside>}
         <summary className={styles.summary}>
           {blok?.date && <span className={styles.date}>{blok?.date}</span>}
@@ -113,7 +130,7 @@ const Details = ({ blok }) => {
           {paragraphs}
           {bulletLists}
         </article>
-      </details>
+      </motion.details>
   );
 };
 
