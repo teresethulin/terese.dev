@@ -11,6 +11,7 @@ import HeadingItem from "./HeadingItem";
 import Sticker from "./Sticker";
 import Card from "./Card";
 import Footer from "./Footer";
+import Details from "./Details";
 
 initStoryblok({
   components: {
@@ -23,7 +24,8 @@ initStoryblok({
     heading_item: HeadingItem,
     sticker: Sticker,
     card: Card,
-    footer: Footer
+    footer: Footer,
+    details: Details
   },
 });
 

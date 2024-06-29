@@ -1,0 +1,121 @@
+@use "../../../styles/base/media-query" as *;
+@use "../../../styles/base/fonts" as *;
+@use "../../../styles/base/mixins" as *;
+@use "../../../styles/base/variables" as *;
+@use "../../../styles/base/typography" as *;
+@use "../../../styles/base/colors" as *;
+@use "../../../styles/base/animations" as *;
+
+.details {
+  position: relative;
+  @include grid-item(1, 4);
+  margin-top: var(--margin-top);
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: $spacing-01;
+  box-shadow: 5px 5px var(--text-color);
+  cursor: pointer;
+
+  .pretitle {
+    @include pretitle;
+  }
+
+  summary {
+    @include flex(column, flex-start, flex-start);
+    padding: $spacing-03;
+
+    .chevron {
+      position: absolute;
+      top: $spacing-03;
+      right: $spacing-03;
+      transition: 0.1s transform ease-in;
+    }
+
+
+    .date {
+      position: absolute;
+      top: -0.9rem;
+      left: calc($spacing-03 - $spacing-01);
+      font-size: 0.75rem;
+      padding: $spacing-01;
+      background: var(--bg-color);
+    }
+
+    .overline {
+      @include overline;
+      margin-bottom: $spacing-02;
+    }
+
+    .h1 {
+      @include h1();
+    }
+
+    .h2 {
+      @include h2();
+    }
+
+    .h3 {
+      @include h3();
+    }
+
+    .h4 {
+      @include h4();
+    }
+  }
+
+  .content {
+    @include flex(column, flex-start, flex-start);
+    padding: 0 $spacing-03 $spacing-03;
+
+    .body {
+      @include body;
+      margin-bottom: $spacing-03;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      a {
+        border-bottom: 1px solid var(--text-color);
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet) {
+    @include grid-item(var(--column-start), var(--column-span));
+
+    summary {
+      padding: $spacing-05;
+
+      .chevron {
+        top: $spacing-05;
+        right: $spacing-05;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .content {
+      padding: 0 $spacing-05 $spacing-05;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: var(--margin-top-desktop);
+
+    .date {
+      left: calc($spacing-05 - $spacing-01);
+    }
+  }
+}
+
+details[open] > summary > .chevron {
+  transform: rotate(180deg);
+  transition: .2s transform ease-in;
+}
