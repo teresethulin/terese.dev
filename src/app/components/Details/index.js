@@ -103,7 +103,7 @@ const Details = ({ blok }) => {
   return (
       <details open={blok?.showAsOpen} {...storyblokEditable(blok)} className={styles.details} style={itemStyles}>
         {blok?.pretitle && <aside className={styles.pretitle}>{blok?.pretitle}</aside>}
-        <summary>
+        <summary className={styles.summary}>
           {blok?.date && <span className={styles.date}>{blok?.date}</span>}
           {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
           {headings}
