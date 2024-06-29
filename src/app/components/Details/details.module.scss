@@ -18,16 +18,17 @@
 
   .pretitle {
     @include pretitle;
-  }
+    }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
+    summary::-webkit-details-marker {
+      display: none;
+      }
 
-  summary {
-    @include flex(column, flex-start, flex-start);
-    padding: $spacing-03;
-    list-style: none;
+    summary {
+      @include flex(column, flex-start, flex-start);
+      padding: $spacing-03;
+      list-style: none;
+      outline: none;
 
     .chevron {
       position: absolute;
