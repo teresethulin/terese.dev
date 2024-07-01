@@ -93,9 +93,20 @@
       }
     }
   }
+}
 
-  @media (min-width: $tablet) {
-    @include grid-item(var(--column-start), var(--column-span));
+.details[open] {
+  summary {
+    .chevron {
+      transform: rotate(180deg);
+      transition: .2s transform ease-in;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .details {
+    @include grid-item(1, 8);
 
     summary {
       padding: $spacing-05;
@@ -129,8 +140,11 @@
       padding: 0 $spacing-05 $spacing-05;
     }
   }
+}
 
-  @media (min-width: $desktop) {
+@media (min-width: $desktop) {
+  .details {
+    @include grid-item(var(--column-start), var(--column-span));
     margin-top: var(--margin-top-desktop);
 
     summary:hover {
@@ -146,21 +160,15 @@
       left: calc($spacing-05 - $spacing-01);
     }
   }
-}
 
-details[open] {
-  summary {
-    .chevron {
-      transform: rotate(180deg);
-      transition: .2s transform ease-in;
-    }
-  }
-  .summary:hover {
-    padding: $spacing-05;
+  .details[open] {
+    .summary:hover {
+      padding: $spacing-05;
 
-    &::after {
-      transform: scaleY(0);
-      background-color: transparent;
+      &::after {
+        transform: scaleY(0);
+        background-color: transparent;
+      }
     }
   }
 }
