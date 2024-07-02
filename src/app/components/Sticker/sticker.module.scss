@@ -9,6 +9,10 @@
     @include grid-item(1, 4);
     @include body();
 
+    height: -webkit-fit-content;
+
+    height: -moz-fit-content;
+
     height: fit-content;
     margin: 2rem;
     padding: 1.25rem;
@@ -16,15 +20,16 @@
     background-color: var(--bg-color);
     border: 3px dotted var(--text-color);
     border-radius: 8px;
-    
+
     @media (min-width: $tablet) {
-        @include grid-item(var(--column-start), var(--column-span));
+        @include grid-item(1, 8);
 
         margin: var(--margin-top-tablet) 0 0;
         font-size: 1rem;
     }
-    
+
     @media (min-width: $desktop) {
+        @include grid-item(var(--column-start), var(--column-span));
         margin: var(--margin-top-desktop) 0 0;
     }
 }
