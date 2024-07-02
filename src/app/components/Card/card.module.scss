@@ -6,95 +6,75 @@
 @use "../../../styles/base/colors" as *;
 
 
-.wrapper {
+.card {
   @include grid-item(1, 4);
+  @include flex(column, flex-start, flex-start);
+  padding: $spacing-03;
   margin-top: var(--margin-top);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: $spacing-01;
+  box-shadow: 5px 5px var(--text-color);
 
-  .pretitle {
-    @include pretitle;
+  .overline {
+    @include overline;
+    margin-bottom: $spacing-02;
   }
 
+  .h1 {
+    @include h1();
+  }
+
+  .h2 {
+    @include h2();
+  }
+
+  .h3 {
+    @include h3();
+  }
+
+  .h4 {
+    @include h4();
+  }
+
+  .body {
+    @include body;
+    margin-bottom: $spacing-03;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin-top: $spacing-03;
+
+    a {
+      border-bottom: 1px solid var(--text-color);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
   .card {
-    @include flex(column, flex-start, flex-start);
-
-    position: relative;
-    padding: $spacing-03;
-    border: 1px solid var(--text-color);
-    background-color: var(--bg-color);
-    border-radius: $spacing-01;
-    box-shadow: 5px 5px var(--text-color);
-
-    .date {
-      position: absolute;
-      top: -0.9rem;
-      left: calc($spacing-03 - $spacing-01);
-      font-size: 0.75rem;
-      padding: $spacing-01;
-      background: var(--bg-color);
-    }
-
-    .overline {
-      @include overline;
-      margin-bottom: $spacing-02;
-    }
-
-    .h1 {
-      @include h1();
-    }
-
-    .h2 {
-      @include h2();
-    }
-
-    .h3 {
-      @include h3();
-    }
-
-    .h4 {
-      @include h4();
-    }
-
-    .body {
-      @include body;
-      margin-bottom: $spacing-03;
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-
-    ul {
-      margin-top: $spacing-03;
-
-      a {
-        border-bottom: 1px solid var(--text-color);
-
-        &:hover {
-          opacity: 0.5;
-        }
-      }
-    }
+    padding: $spacing-05;
   }
+}
 
-  @media (min-width: $tablet) {
+@media (min-width: $desktop) {
+  .card {
     @include grid-item(var(--column-start), var(--column-span));
-
-    .card {
-      padding: $spacing-05;
-    }
-  }
-
-  @media (min-width: $desktop) {
     margin-top: var(--margin-top-desktop);
 
-    .card {
-      .date {
-        left: calc($spacing-05 - $spacing-01);
-      }
-
-      ul {
-        margin-top: $spacing-04;
-      }
+    ul {
+      margin-top: $spacing-04;
     }
   }
 }
