@@ -1,5 +1,6 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
+import { motion } from "framer-motion";
 
 import styles from "./card.module.scss";
 
@@ -37,6 +38,21 @@ const Card = ({ blok }) => {
         "h2": styles.h2,
         "h3": styles.h3,
         "h4": styles.h4
+    };
+
+    const fadeIn = {
+        offscreen: {
+            y: 75,
+            opacity: 0
+        },
+        onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                duration: 1
+            }
+        }
     };
 
     const headings = blok?.text?.content?.map((item, index) => {
@@ -98,12 +114,12 @@ const Card = ({ blok }) => {
     ));
 
     return (
-        <article {...storyblokEditable(blok)} className={styles.card} style={itemStyles}>
+        <motion.article {...storyblokEditable(blok)} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: "some" }} variants={fadeIn} className={styles.card} style={itemStyles}>
             {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
             {headings}
             {paragraphs}
             {bulletLists}
-        </article>
+        </motion.article>
     );
 };
 

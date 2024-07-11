@@ -101,24 +101,25 @@ const Details = ({ blok }) => {
       </ul>
   ));
 
-  const bounceIn = {
+  const fadeIn = {
     offscreen: {
-      y: 300
+    y: 75,
+    opacity: 0
     },
     onscreen: {
-      y: 0,
-      transition: {
+    y: 0,
+    opacity: 1,
+    transition: {
         type: "spring",
-        bounce: 0.4,
         duration: 0.8
-      }
+    }
     }
   };
 
   return (
       <motion.details initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }} variants={bounceIn} open={blok?.showAsOpen} {...storyblokEditable(blok)} className={styles.details} style={itemStyles}>
+      viewport={{ once: true, amount: "some" }} variants={fadeIn} open={blok?.showAsOpen} {...storyblokEditable(blok)} className={styles.details} style={itemStyles}>
         {blok?.pretitle && <aside className={styles.pretitle}>{blok?.pretitle}</aside>}
         <summary className={styles.summary}>
           {blok?.date && <span className={styles.date}>{blok?.date}</span>}
