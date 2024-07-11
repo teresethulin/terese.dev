@@ -18,8 +18,8 @@
     transform-origin: right;
     transition: transform .6s cubic-bezier(0.5, 0, 0, 1) 0s, width .6s cubic-bezier(0.5, 0, 0, 1) 0s;
 
-    @include flex(column, flex-start, center);
-    
+    @include flex(column, center, center);
+
     &.open {
         width: 100vw;
         transform: scaleX(1);
@@ -30,7 +30,7 @@
             opacity: 1;
         }
     }
-    
+
     .menuList {
         padding: 0;
         list-style-type: none;
