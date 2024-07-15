@@ -6,6 +6,7 @@
 
 .heading {
     @include grid-item(1, 4);
+    color: var(--text-color);
 
     &.h1 {
         @include h1();

@@ -6,7 +6,8 @@ import styles from "./heading-item.module.scss";
 const HeadingItem = ({ blok }) => {
     const itemStyles = {
         "--column-start": blok?.column_start,
-        "--column-span": blok?.column_span
+        "--column-span": blok?.column_span,
+        "--text-color": blok?.color
     };
 
     const headingTypeToClassName = {

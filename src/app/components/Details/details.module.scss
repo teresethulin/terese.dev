@@ -15,6 +15,7 @@
   height: fit-content;
   margin-top: var(--margin-top);
   background-color: var(--bg-color);
+  color: var(--text-color);
   border: 1px solid var(--text-color);
   border-radius: $spacing-01;
   box-shadow: 5px 5px var(--text-color);
@@ -40,6 +41,10 @@
       top: $spacing-03;
       right: $spacing-03;
       transition: 0.1s transform ease-in;
+
+      svg {
+        fill: var(--text-color)
+      }
     }
 
     .date {
