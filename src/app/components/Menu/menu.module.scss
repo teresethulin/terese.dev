@@ -26,15 +26,25 @@
         transform-origin: right;
         transition: transform .6s cubic-bezier(0.5, 0, 0, 1) 0s, width .6s cubic-bezier(0.5, 0, 0, 1) 0s;
 
-        .menuList  {
+        .menuList,
+        .iconList  {
             opacity: 1;
         }
     }
 
-    .menuList {
+    .menuList,
+    .iconList {
         padding: 0;
         list-style-type: none;
         opacity: 0;
+    }
+
+    .iconList {
+        @include flex(row, center, flex-start);
+        width: 100%;
+        position: absolute;
+        left: 1.5rem;
+        bottom: 1rem;
     }
 
     @media (min-width: $tablet) {
