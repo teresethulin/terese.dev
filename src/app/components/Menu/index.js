@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import Link from "next/link";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import classNames from 'classnames';
+
+import { LinkedIn } from '../../../../public/icons/linkedin';
 
 import styles from "./menu.module.scss";
 
@@ -30,6 +33,12 @@ const Menu = React.forwardRef(({ isOpen, setIsOpen, configData }, ref) => {
       <ul className={styles.menuList} {...storyblokEditable({configData})}>
         {configData?.menu_links?.map((nestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} setIsOpen={setIsOpen} color={configData?.main_color} />
+        ))}
+      </ul>
+      <ul className={styles.iconList}>
+        {configData?.social_media_links?.map((item) => (
+          item?.name === "LinkedIn" &&
+            (<Link key={item?._uid} href={item?.link?.url} target={item?.link?.target}><LinkedIn color={configData?.main_color}/></Link>)
         ))}
       </ul>
     </nav>
