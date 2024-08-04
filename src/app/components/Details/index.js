@@ -3,7 +3,7 @@ import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import Chevron from "../../../../public/icons/chevron-down.svg";
+import { Chevron } from "../../../../public/icons/chevron";
 import styles from "./details.module.scss";
 
 const Details = ({ blok }) => {
@@ -125,7 +125,7 @@ const Details = ({ blok }) => {
           {blok?.date && <span className={styles.date}>{blok?.date}</span>}
           {blok?.overline && <span className={styles.overline}>{blok?.overline}</span>}
           {headings}
-          <Image className={styles.chevron} src={Chevron} width={18} height={18} alt="chevron"/>
+          <Chevron className={styles.chevron} color={blok?.textColor}/>
         </summary>
         <article className={styles.content}>
           {paragraphs}
