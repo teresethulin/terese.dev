@@ -41,15 +41,15 @@
         @include flex(row, center, center);
         position: relative;
         z-index: 0;
-        height: 48px;
+        height: 56px;
         margin: auto 0 0;
         padding: 0 $spacing-03;
         font-family: "Work Sans";
-        font-size: 1rem;
+        font-size: 1.25rem;
         text-transform: uppercase;
         letter-spacing: 0.1px;
         border: 2px solid var(--selected-color);
-        border-radius: 42px;
+        border-radius: 70px;
         overflow: hidden;
         cursor: pointer;
 
