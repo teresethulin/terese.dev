@@ -28,7 +28,7 @@
     h3 {
         @include h3;
 
-        color: var(--text-color);
+        color: var(--logo-color);
     }
 
     @media (min-width: $tablet) {

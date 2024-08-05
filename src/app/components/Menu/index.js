@@ -24,21 +24,21 @@ const Menu = React.forwardRef(({ isOpen, setIsOpen, configData }, ref) => {
  });
 
  const colorStyle = {
-  "--bg-color": configData?.bg_color,
-  "--text-color": `var(--${configData?.main_color}-50)`
+  "--bg-color": configData?.menu_bgColor,
+  "--text-color": configData?.menu_textColor
  };
 
   return (
     <nav className={menuClasses} ref={ref} style={colorStyle}>
       <ul className={styles.menuList} {...storyblokEditable({configData})}>
         {configData?.menu_links?.map((nestedBlok) => (
-          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} setIsOpen={setIsOpen} color={configData?.main_color} />
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} isOpen={isOpen} setIsOpen={setIsOpen} color={configData?.menu_textColor} />
         ))}
       </ul>
       <ul className={styles.iconList}>
         {configData?.social_media_links?.map((item) => (
           item?.name === "LinkedIn" &&
-            (<Link key={item?._uid} href={item?.link?.url} target={item?.link?.target}><LinkedIn color={configData?.main_color}/></Link>)
+            (<Link key={item?._uid} href={item?.link?.url} target={item?.link?.target}><LinkedIn color={configData?.menu_textColor}/></Link>)
         ))}
       </ul>
     </nav>

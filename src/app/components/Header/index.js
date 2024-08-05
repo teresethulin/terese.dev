@@ -39,7 +39,9 @@ const Header = ({ configData }) => {
 };
 
  const colorStyle = {
-  "--text-color": `var(--${configData?.main_color}-50)`
+  "--text-color": configData?.main_color,
+  "--logo-color": configData?.logo_color,
+  "--line-color": configData?.line_color
  };
 
   return (
@@ -48,7 +50,7 @@ const Header = ({ configData }) => {
           <h3>terese</h3>
         </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} configData={configData}/>
-        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} color={configData?.main_color}/>
+        <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} lineColor={configData?.burgerColor} buttonColor={configData?.menu_textColor}/>
     </header>
   );
 };

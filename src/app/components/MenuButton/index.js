@@ -2,14 +2,15 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./menubutton.module.scss";
 
-const MenuButton = React.forwardRef(({ onClick, isOpen, color }, ref) => {
+const MenuButton = React.forwardRef(({ onClick, isOpen, lineColor, buttonColor }, ref) => {
   MenuButton.displayName = "MenuButton";
   const buttonClasses = classNames(styles.menuButton, {
     [styles.open]: isOpen,
  });
 
  const buttonStyle = {
-  "--button-color": `var(--${color}-50)`,
+  "--button-color": buttonColor,
+  "--line-color": lineColor
  };
 
   return (
