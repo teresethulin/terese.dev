@@ -2,6 +2,7 @@
 @use "../../../styles/base/colors" as *;
 @use "../../../styles/base/media-query" as *;
 @use "../../../styles/base/variables" as *;
+@use "../../../styles/base/typography" as *;
 
 .menuButton {
     @include flex(row, center, center, 10px);
@@ -13,12 +14,16 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    height: auto;
-    padding: 12px;
+    height: 40px;
+    padding: 0 12px;
     background-color: var(--button-color);
     border: none;
     border-radius: 12px;
     cursor: pointer;
+
+    .buttonText {
+        @include body();
+    }
 
     .burger {
         @include flex(column, center, space-between);
