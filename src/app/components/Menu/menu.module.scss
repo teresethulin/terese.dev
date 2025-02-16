@@ -5,6 +5,7 @@
 @use "../../../styles/base/colors" as *;
 
 .menu {
+    @include flex(column, flex-start, center, 4rem);
     position: fixed;
     top: 0;
     right: 0;
@@ -17,8 +18,6 @@
     transform: scaleX(0);
     transform-origin: right;
     transition: transform .6s cubic-bezier(0.5, 0, 0, 1) 0s, width .6s cubic-bezier(0.5, 0, 0, 1) 0s;
-
-    @include flex(column, center, center);
 
     &.open {
         width: 100vw;
@@ -42,9 +41,9 @@
     .iconList {
         @include flex(row, center, flex-start);
         width: 100%;
-        position: absolute;
-        left: 1.5rem;
-        bottom: 1rem;
+        //position: absolute;
+        //left: 1.5rem;
+        //bottom: 1rem;
     }
 
     @media (min-width: $tablet) {
