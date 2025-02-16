@@ -22,3 +22,20 @@
         url('/fonts/Sporting_Grotesque-Bold_web.ttf') format('truetype'),
         url('/fonts/Sporting_Grotesque-Bold_web.svg#svgFontName') format('svg');
 }
+
+@font-face {
+    font-family: 'ApfelGrotezk-Regular';
+    src: url('/fonts/ApfelGrotezk-Regular.woff2') format('woff2'),
+        url('/fonts/ApfelGrotezk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ApfelGrotezk-Mittel';
+    src: url('/fonts/ApfelGrotezk-Mittel.woff2') format('woff2'),
+        url('/fonts/ApfelGrotezk-Mittel.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}

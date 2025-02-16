@@ -7,9 +7,9 @@
 
 @mixin h1() {
     font-size: 3rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
+    font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 3.5rem;
-    letter-spacing: -1px;
+    letter-spacing: 1.4px;
 
     @media (min-width: $tablet) {
         font-size: 4.5rem;
@@ -24,7 +24,7 @@
 
 @mixin h2() {
     font-size: 1.5rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
+    font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 1.8125rem;
 
     @media (min-width: $tablet) {
@@ -40,7 +40,7 @@
 
 @mixin h3() {
     font-size: 1.25rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
+    font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 1.5rem;
 
     @media (min-width: $tablet) {
@@ -56,7 +56,7 @@
 
 @mixin h4() {
     font-size: 1.125rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
+    font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 1.375rem;
 
     @media (min-width: $tablet) {
@@ -83,7 +83,7 @@
 
 @mixin link() {
     font-size: 1rem;
-    font-family: "Work Sans", sans-serif;
+    font-family: "ApfelGrotezk-Regular", sans-serif;
     line-height: 1.1875rem;
 
     @media (min-width: $desktop) {
@@ -95,7 +95,7 @@
 @mixin menu-item() {
     margin-bottom: 1.5rem;
     font-size: 2rem;
-    font-family: "Sporting Grotesque_Bold", sans-serif;
+    font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 3rem;
     letter-spacing: -.02rem;
 
@@ -111,7 +111,7 @@
 
 @mixin overline() {
     font-size: 0.875rem;
-    font-family: "Work Sans", sans-serif;
+    font-family: "ApfelGrotezk-Regular", sans-serif;
     line-height: 1.0625rem;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
