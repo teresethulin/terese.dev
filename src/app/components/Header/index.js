@@ -46,9 +46,6 @@ const Header = ({ configData }) => {
 
   return (
     <header className={styles.header} style={colorStyle}>
-        <Link to="" onClick={scrollToTop} smooth duration={550} aria-label="home" className={styles.logo}>
-          ✨
-        </Link>
         <Menu ref={menuRef} isOpen={isOpen} setIsOpen={setIsOpen} configData={configData}/>
         <MenuButton ref={menuButtonRef} onClick={toggleMenu} isOpen={isOpen} lineColor={configData?.burgerColor} buttonColor={configData?.menu_textColor}/>
     </header>
