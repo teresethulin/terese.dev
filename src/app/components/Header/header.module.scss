@@ -16,20 +16,15 @@
 }
 
 .logo {
-    @include flex(column, flex-start, center);
+    @include flex(column, flex-start, flex-start);
 
     position: absolute;
     top: $spacing-02;
-    left: $spacing-03;
+    left: $spacing-01;
     z-index: 10;
-    height: 4rem;
+    height: auto;
+    font-size: 2rem;
     cursor: pointer;
-
-    h3 {
-        @include h3;
-
-        color: var(--logo-color);
-    }
 
     @media (min-width: $tablet) {
         left: $spacing-04;
@@ -38,5 +33,6 @@
     @media (min-width: $desktop) {
         top: $spacing-04;
         left: $spacing-06;
+        font-size: 3rem;
     }
 }
