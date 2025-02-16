@@ -9,16 +9,13 @@
 .card {
   @include grid-item(1, 4);
   @include flex(column, flex-start, flex-start);
-  padding: $spacing-03;
   margin-top: var(--margin-top);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   color: var(--text-color);
-  border: 1px solid var(--text-color);
   background-color: var(--bg-color);
   border-radius: $spacing-01;
-  box-shadow: 5px 5px var(--text-color);
 
   .overline {
     @include overline;
@@ -66,7 +63,6 @@
 @media (min-width: $tablet) {
   .card {
     @include grid-item(1, 8);
-    padding: $spacing-05;
   }
 }
 
