@@ -23,6 +23,10 @@
 
     .buttonText {
         @include body();
+        color: white;
+        -webkit-text-decoration: none;
+                -webkit-text-decoration: none;
+                        text-decoration: none;
     }
 
     .burger {
