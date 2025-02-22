@@ -9,11 +9,12 @@
     font-size: 3rem;
     font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 3.5rem;
-    letter-spacing: -.02rem;
+    letter-spacing: -.04rem;
 
     @media (min-width: $tablet) {
         font-size: 4.5rem;
         line-height: 5rem;
+        letter-spacing: -.02rem;
     }
 
     @media (min-width: $desktop) {
@@ -23,17 +24,17 @@
 }
 
 @mixin h2() {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: "ApfelGrotezk-Mittel", sans-serif;
     line-height: 1.8125rem;
 
     @media (min-width: $tablet) {
-        font-size: 2rem;
+        font-size: 3rem;
         line-height: 2.375rem;
     }
 
     @media (min-width: $desktop) {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         line-height: 3rem;
     }
 }
@@ -73,7 +74,7 @@
 
 @mixin body() {
     font-size: 1rem;
-    font-family: "Work Sans", sans-serif;
+    font-family: "ApfelGrotezk-Regular", sans-serif;
     line-height: 1.5rem;
 
     @media (min-width: $desktop) {
